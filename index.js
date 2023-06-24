@@ -40,7 +40,6 @@
 
 // function game() {
 //   while (playerScore < 5 && computerScore < 5) {
-//     //TODO: use buttons inseated of prompt
 //     let playerSelection = prompt("Enter your choice").toLowerCase();
 //     let computerSelection = getComputerChoice();
 
@@ -57,23 +56,26 @@
 // game();
 
 //* Gets the player's choice
-function getPlayerChoice(computer) {
-  const choices = document.querySelectorAll(".choice");
+function getPlayerChoice() {
+  return new Promise(function (resolve) {
+    const choices = document.querySelectorAll(".choice");
 
-  choices.forEach((choice) => {
-    choice.addEventListener("click", () => {
-      console.log(choice.textContent);
-      computer();
+    // Adds an click evenlistener for the buttons and returns the id attribute
+    choices.forEach((choice) => {
+      choice.addEventListener("click", () => {
+        console.log(choice.getAttribute("id"));
+        resolve(choice.getAttribute("id"));
+      });
     });
   });
 }
 
 //* Gets the computer's choice
 function getComputerChoice() {
-  //* 1. Get a random number from 1-3
+  // Gets a random number from 1-3
   const number = Math.floor(Math.random() * 3) + 1;
 
-  //* 2. Set the choice corresponding to the random number
+  // Sets the choice corresponding to the random number
   let choice;
   switch (number) {
     case 1:
@@ -86,12 +88,39 @@ function getComputerChoice() {
       choice = "Scissors";
       break;
   }
-
-  console.log(choice);
+  console.log("Computer: " + choice);
+  return choice;
 }
 
-//* Decided who wins the round
-//* First to 5 wins
+//* Decides who wins the round;
+function playRound(player, computer) {
+  let result;
+  if (player == "Rock") {
+    result =
+      computer == "Rock"
+        ? "Draw"
+        : computer == "Paper"
+        ? "You lose!"
+        : "You win!";
+  } else if (player == "Paper") {
+    result =
+      computer == "Paper"
+        ? "Draw"
+        : computer == "Scissors"
+        ? "You lose!"
+        : "You win!";
+  } else {
+    result =
+      computer == "Scissors"
+        ? "Scissors"
+        : computer == "Rock"
+        ? "You lose!"
+        : "You win!";
+  }
 
-//* Gets the computer's choice when the player's choice is decided
-getPlayerChoice(getComputerChoice);
+  console.log(result);
+  return result;
+}
+
+//TODO: First to 5 wins
+playRound(getPlayerChoice, getComputerChoice);
