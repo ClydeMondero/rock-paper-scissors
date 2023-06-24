@@ -1,0 +1,4 @@
+Get the player's choice
+Get the computer's choice
+Decide who wins the round 
+First to 5 wins 
