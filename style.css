@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Press Start 2P", cursive;
+  background-color: #cdb4db;
+}
+
+.gameBoard {
+  width: 50%;
+  height: 100vh;
+  margin: auto;
+  padding: 2rem;
+  background-color: #c28ae2;
+  border-radius: 2rem;
+}
+
+.title {
+  text-align: center;
+  color: white;
+}
+
+.subtitle {
+  text-align: center;
+  color: rgb(200, 208, 216);
+  font-size: 0.6rem;
+}
+
+.scoreBoard {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.5rem;
+  padding: 2rem 0;
+}
+
+.player {
+  font-size: 0.8rem;
+  color: #ffafcc;
+}
+
+.computer {
+  font-size: 0.8rem;
+  color: #a2d2ff;
+}
+
+.hands {
+  height: 40vh;
+  background-color: #d2a5ec;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 1rem;
+  position: relative;
+}
+
+.choices {
+  margin-top: 2rem;
+  text-align: center;
+  color: #e3d5eb;
+}
+
+.playerChoices {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.choice {
+  background-color: #931cd8;
+  border: 0;
+  border-radius: 4rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.choice:hover {
+  background-color: #ccbad6;
+}
+
+.winnerContainer {
+  width: 100%;
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  text-align: center;
+}

@@ -3,24 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <title>Rock Paper Scissors</title>
   </head>
   <body>
-    <div>
-      <p>Player's Score: <span id="playerScore">0</span></p>
+    <div class="gameBoard">
+      <h1 class="title">Rock Paper Scissors</h1>
+      <p class="subtitle">first to 5 wins</p>
+      <!-- Score Board-->
+      <div class="scoreBoard">
+        <p class="player">Player's Score: <span id="playerScore">0</span></p>
+
+        <p class="computer">
+          Computer's Score: <span id="computerScore">0</span>
+        </p>
+      </div>
+
+      <!-- Fighting Section -->
+      <div class="hands">
+        <!-- Winner Display -->
+        <div class="winnerContainer">
+          <h2 class="winner"></h2>
+        </div>
+        <img class="hands__player" src="./images/rock.png" alt="" />
+        <h2>vs</h2>
+        <img class="hands__computer" src="./images/rock.png" alt="" />
+      </div>
+
+      <!-- Hands Choices -->
+      <div class="choices">
+        <h4>Choose your choice:</h4>
+        <div class="playerChoices">
+          <button id="Rock" class="choice">
+            <img src="./images/rock.png" alt="Rock" />
+          </button>
+          <button id="Paper" class="choice">
+            <img src="./images/paper.png" alt="Paper" />
+          </button>
+          <button id="Scissors" class="choice">
+            <img src="./images/scissors.png" alt="Scissors" />
+          </button>
+        </div>
+      </div>
     </div>
-    <div>
-      <p>Computer's Score: <span id="computerScore">0</span></p>
-    </div>
-    <button id="Rock" class="choice">
-      <img src="./images/rock.png" alt="Rock" />
-    </button>
-    <button id="Paper" class="choice">
-      <img src="./images/paper.png" alt="Paper" />
-    </button>
-    <button id="Scissors" class="choice">
-      <img src="./images/scissors.png" alt="Scissors" />
-    </button>
+
     <script src="index.js"></script>
   </body>
 </html>
