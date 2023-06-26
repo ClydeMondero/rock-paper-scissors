@@ -103,6 +103,7 @@ function displayWinner(result) {
   winner.textContent = result;
   if (result == "Player wins!") winner.style.color = "#a01a58";
   if (result == "Computer wins!") winner.style.color = "#1780a1";
+  if (result == "Draw!") winner.style.color = "#0F0F0F";
 }
 
 //* Updates the scores
